@@ -12,14 +12,6 @@ namespace RouteModelingApp.Controllers
     [ApiController]
     public class RouteController : ControllerBase
     {
-        // GET: api/<RouteController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-
         [HttpGet]
         public async Task<List<RouteModel>> Get()
         {
