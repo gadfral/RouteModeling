@@ -36,7 +36,7 @@ public static class RouteCalculator
             return new Route
             {
                 FullPrice = fullPrice,
-                Time = time,
+                Time = time / 60,
                 СurrencyCode = "RUB",
             };
         });
