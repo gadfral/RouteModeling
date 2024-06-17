@@ -23,6 +23,7 @@ namespace RouteModelingCore.Context
                 FullPrice = 50,
             },
             PermissibleMaximumWeigth = 15,
+            AutoType = AutoType.Moto,
         };
 
         private static readonly EntityContext.EntityContext _carContext = new EntityContext.EntityContext
@@ -39,6 +40,7 @@ namespace RouteModelingCore.Context
                 FullPrice = 250,
             },
             PermissibleMaximumWeigth = 200,
+            AutoType = AutoType.Car,
         };
 
         private static readonly EntityContext.EntityContext _trackContext = new EntityContext.EntityContext
@@ -55,6 +57,7 @@ namespace RouteModelingCore.Context
                 FullPrice = 600,
             },
             PermissibleMaximumWeigth = 3500,
+            AutoType = AutoType.Truck,
         };
 
         public static EntityContext.EntityContext CarContext => _carContext;

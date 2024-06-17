@@ -21,4 +21,6 @@ public sealed class Freight
     public Valuation Valuation { get; set; }
 
     public Way Way { get; set; }
+
+    public double Weight { get; set; }
 }

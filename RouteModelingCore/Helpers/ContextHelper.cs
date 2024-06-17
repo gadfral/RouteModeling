@@ -23,9 +23,24 @@ namespace RouteModelingCore.Helpers
             };
         }
 
-        public static EntityContext GetContextByParams(Freight freight)
+        public static List<EntityContext> GetContextByParams(Freight freight)
         {
-            throw new NotImplementedException();
+            List<EntityContext> contexts = new List<EntityContext>();
+
+            if (Context.AutoContext.MotoContext.IsAvailableDimensions(freight.Dimensions) && 
+                Context.AutoContext.MotoContext.IsAvailableWeight(freight.Weight))
+                contexts.Add(Context.AutoContext.MotoContext);
+
+            if (Context.AutoContext.CarContext.IsAvailableDimensions(freight.Dimensions) &&
+                Context.AutoContext.CarContext.IsAvailableWeight(freight.Weight))
+                contexts.Add(Context.AutoContext.CarContext);
+
+            if (Context.AutoContext.TrackContext.IsAvailableDimensions(freight.Dimensions) && 
+                Context.AutoContext.TrackContext.IsAvailableWeight(freight.Weight))
+                contexts.Add(Context.AutoContext.TrackContext);
+
+            return contexts;
+
         }
     }
 }

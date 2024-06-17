@@ -9,6 +9,8 @@ namespace RouteModelingCore.Context.EntityContext
 {
     public sealed class EntityContext
     {
+        public AutoType AutoType { get; set; }
+
         public double PermissibleMaximumWeigth { get; set; }
 
         public Dimensions Dimensions { get; set; }

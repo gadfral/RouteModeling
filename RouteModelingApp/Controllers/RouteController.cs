@@ -35,9 +35,9 @@ namespace RouteModelingApp.Controllers
 
         // GET api/<RouteController>/5
         [HttpGet("{id}")]
-        public RouteModel Get(int id)
+        public List<RouteModel> Get(int id)
         {
-            return RouteCalculator.CalculateRoute(new Freight
+            return RouteCalculator.CalculateRoutes(new Freight
             {
                 Way = new Way
                 {
@@ -65,7 +65,9 @@ namespace RouteModelingApp.Controllers
                     CostOfInsurance = 213123,
                     CoveredAmount = 2132,
                 }
-            }).MapToModel();
+            })
+                .Select(x => x.MapToModel())
+                .ToList();
         }
 
         // POST api/<RouteController>

@@ -1,32 +1,44 @@
-﻿using RouteModelingCore.Entities;
+﻿using RouteModelingCore.Context.EntityContext;
+using RouteModelingCore.Entities;
 using RouteModelingCore.Helpers;
 
 namespace RouteModelingCore;
 
 public static class RouteCalculator
 {
-    public static Route CalculateRoute(Freight freight)
+    public static List<Route> CalculateRoutes(Freight freight)
     {
+        var autoContexts = new List<EntityContext>();
         var autoContext = ContextHelper.GetContext(freight.AutoType);
+
+        if (autoContext is not null)
+        {
+            autoContexts = new List<EntityContext>() { autoContext };
+        }
 
         if (autoContext is null)
         {
-            autoContext = ContextHelper.GetContextByParams(freight);
+            autoContexts = ContextHelper.GetContextByParams(freight);
         }
 
-        var distance = DistanceHelper.CalculateDistance(freight.Way.From, freight.Way.To);
-
-        var time = distance / autoContext.Speed;
-        decimal fullPrice = autoContext.Price.FullPrice * (decimal)(distance / 1000);
-
-        return new Route
-        {
-            FullPrice = fullPrice,
-            Time = time,
-            СurrencyCode = "RUB",
-        };
+        return CalculateRoutes(freight, autoContexts);
     }
 
-    
+    private static List<Route> CalculateRoutes(Freight freight, List<EntityContext> autoContexts)
+    {
+        return autoContexts.ConvertAll(autoContext =>
+        {
+            var distance = DistanceHelper.CalculateDistance(freight.Way.From, freight.Way.To);
 
+            var time = distance / autoContext.Speed;
+            decimal fullPrice = autoContext.Price.FullPrice * (decimal)(distance / 1000);
+
+            return new Route
+            {
+                FullPrice = fullPrice,
+                Time = time,
+                СurrencyCode = "RUB",
+            };
+        });
+    }
 }
