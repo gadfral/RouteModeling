@@ -14,6 +14,8 @@ public sealed class Freight
 
     public long Id { get; set; }
 
+    public AutoType AutoType { get; set; }
+
     public Dimensions Dimensions { get; set; }
 
     public Valuation Valuation { get; set; }

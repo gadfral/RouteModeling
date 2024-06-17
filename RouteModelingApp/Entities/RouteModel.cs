@@ -2,7 +2,14 @@
 
 public class RouteModel
 {
-    public long Id { get; set; }
+    public string СurrencyCode { get; set; }
+
+    public decimal FullPrice { get; set; }
+
+    /// <summary>
+    /// Время минутах
+    /// </summary>
+    public double Time { get; set; }
 
     public string Name { get; set; }
 

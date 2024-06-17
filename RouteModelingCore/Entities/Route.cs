@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RouteModelingCore.Entities
 {
-    internal class Route
+    public sealed class Route
     {
         public string СurrencyCode { get; set; }
 

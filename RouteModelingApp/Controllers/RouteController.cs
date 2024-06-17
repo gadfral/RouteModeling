@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RouteModelingApp.Entities;
+using RouteModelingApp.Mapper;
+using RouteModelingCore;
+using RouteModelingCore.Entities;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -32,9 +35,37 @@ namespace RouteModelingApp.Controllers
 
         // GET api/<RouteController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public RouteModel Get(int id)
         {
-            return "value";
+            return RouteCalculator.CalculateRoute(new Freight
+            {
+                Way = new Way
+                {
+                    From = new Location
+                    {
+                        Latitude = 1,
+                        Longitude = 2,
+                    },
+                    To = new Location
+                    {
+                        Longitude = 3,
+                        Latitude = 4,
+                    }
+                },
+                Dimensions = new Dimensions
+                {
+                    Length = 1,
+                    Height = 2,
+                    Width = 3,
+                },
+                AutoType = AutoType.Car,
+                Valuation = new Valuation
+                {
+                    AvailabilityOfInsurance = true,
+                    CostOfInsurance = 213123,
+                    CoveredAmount = 2132,
+                }
+            }).MapToModel();
         }
 
         // POST api/<RouteController>

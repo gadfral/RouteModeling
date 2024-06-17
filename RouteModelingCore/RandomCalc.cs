@@ -21,9 +21,8 @@ namespace RouteModelingCore
         /// <returns></returns>
         public static int RandomSpeed(AutoType type) => type switch
         {
-            AutoType.PassengerCar => new Random().Next(1000, 10000),
-            AutoType.Suv => new Random().Next(1000, 1000),
-            AutoType.Сargo => new Random().Next(1000, 1000),
+            AutoType.Moto => new Random().Next(1000, 10000),
+            AutoType.Car => new Random().Next(1000, 1000),
             AutoType.Truck => new Random().Next(1000, 1000),
             _ => throw new ArgumentOutOfRangeException(nameof(type))
         };
@@ -34,9 +33,8 @@ namespace RouteModelingCore
         /// <returns></returns>
         public static decimal RandomPrice(AutoType type) => type switch
         {
-            AutoType.PassengerCar => new Random().Next(1000, 10000),
-            AutoType.Suv => new Random().Next(1000, 1000),
-            AutoType.Сargo => new Random().Next(1000, 1000),
+            AutoType.Moto => new Random().Next(1000, 10000),
+            AutoType.Car => new Random().Next(1000, 1000),
             AutoType.Truck => new Random().Next(1000, 1000),
             _ => throw new ArgumentOutOfRangeException(nameof(type))
         };

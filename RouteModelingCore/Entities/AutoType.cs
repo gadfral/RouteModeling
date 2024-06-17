@@ -8,9 +8,9 @@ namespace RouteModelingCore.Entities
 {
     public enum AutoType
     {
-        PassengerCar,
-        Suv,
-        Сargo,
+        None,
+        Moto,
+        Car,
         Truck
     }
 }
