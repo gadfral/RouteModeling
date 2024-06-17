@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RouteModelingCore.Entities;
+﻿using RouteModelingCore.Entities;
 
-namespace RouteModelingCore
+namespace RouteModelingCore;
+
+public static class RouteCalculator
 {
-    public static class RouteCalculator
+    public static Route CalculateRoute(Freight freight)
     {
-        public static Route CalculateRoute(Freight freight) => throw new NotImplementedException();
+        var speed = RandomCalc.RandomSpeed();
+        var way = RandomCalc.RandomWay();
+        var price = RandomCalc.RanmdonPrice();
 
+        throw new NotImplementedException();
     }
+
 }
