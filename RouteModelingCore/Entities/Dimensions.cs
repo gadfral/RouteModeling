@@ -1,6 +1,6 @@
 ﻿namespace RouteModelingCore.Entities;
 
-public sealed class Dimensions
+public sealed class Dimensions 
 {
     public double Height { get; set; }
 

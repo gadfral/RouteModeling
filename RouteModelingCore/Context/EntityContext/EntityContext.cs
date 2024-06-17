@@ -7,9 +7,9 @@ using RouteModelingCore.Entities;
 
 namespace RouteModelingCore.Context.EntityContext
 {
-    internal class EntityContext
+    public sealed class EntityContext
     {
-        public double Weigth { get; set; }
+        public double PermissibleMaximumWeigth { get; set; }
 
         public Dimensions Dimensions { get; set; }
 
