@@ -28,7 +28,7 @@ public static class RouteCalculator
     {
         return autoContexts.ConvertAll(autoContext =>
         {
-            var distance = DistanceHelper.CalculateDistance(freight.Way.From, freight.Way.To);
+            var distance = DistanceHelper.CalculateDistance(freight.Way.From, freight.Way.To) / 1000;
 
             var time = distance / autoContext.Speed;
             decimal fullPrice = autoContext.Price.FullPrice * (decimal)(distance);
