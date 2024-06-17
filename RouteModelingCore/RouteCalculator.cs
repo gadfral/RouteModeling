@@ -1,4 +1,5 @@
 ﻿using RouteModelingCore.Entities;
+using RouteModelingCore.Helpers;
 
 namespace RouteModelingCore;
 
@@ -7,11 +8,13 @@ public static class RouteCalculator
     public static Route CalculateRoute(Freight freight)
     {
         var speed = RandomCalc.RandomSpeed(AutoType.PassengerCar);
-        var way = RandomCalc.RandomWay();
+
+        var distance = DistanceHelper.CalculateDistance(freight.Way.From, freight.Way.To);
+
         var price = RandomCalc.RandomPrice(AutoType.PassengerCar);
 
-        var time = speed * way;
-        decimal fullPrice = price * (decimal)(way / 1000);
+        var time = speed * distance;
+        decimal fullPrice = price * (decimal)(distance / 1000);
 
         return new Route
         {
