@@ -36,7 +36,7 @@ public static class RouteCalculator
             return new Route
             {
                 FullPrice = fullPrice,
-                Time = time / 60,
+                Time = time * 60,
                 СurrencyCode = "RUB",
                 AutoName = autoContext.AutoType.GetName(),
             };
