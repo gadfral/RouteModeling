@@ -8,7 +8,7 @@ namespace RouteModelingApp.Mapper
         public static RouteModel MapToModel(this RouteModelingCore.Entities.Route route) => new RouteModel
         {
             FullPrice = $"{route.FullPrice:F} рублей",
-            Time = $"{route.Time} минут(ы)",
+            Time = $"{route.Time:F} минут(ы)",
             СurrencyCode = route.СurrencyCode,
             Name = route.AutoName
         };
