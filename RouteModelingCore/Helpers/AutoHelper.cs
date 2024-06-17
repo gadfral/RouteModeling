@@ -22,8 +22,5 @@ namespace RouteModelingCore.Helpers
                 _ => throw new ArgumentOutOfRangeException(nameof(autoType), autoType, null)
             };
         }
-
-       
-
     }
 }
