@@ -15,17 +15,17 @@ namespace RouteModelingCore.Helpers
             {
                 var seconds = minute * 60;
 
-                return $"{seconds:F} секунд(ы)";
+                return $"{seconds:F} сек.";
             }
 
             if (minute > 60)
             {
                 var hour = minute / 60;
 
-                return $"{hour:F} час(а/ов)";
+                return $"{hour:F} ч.";
             }
 
-            return $"{minute:F} минут(ы)";
+            return $"{minute:F} мин.";
         }
     }
 }
