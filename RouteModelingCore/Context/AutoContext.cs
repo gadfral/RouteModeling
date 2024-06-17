@@ -20,7 +20,7 @@ namespace RouteModelingCore.Context
             },
             Price = new Price
             {
-                FullPrice = 50,
+                FullPrice = 500,
             },
             PermissibleMaximumWeigth = 15,
             AutoType = AutoType.Moto,
@@ -54,7 +54,7 @@ namespace RouteModelingCore.Context
             },
             Price = new Price
             {
-                FullPrice = 600,
+                FullPrice = 100,
             },
             PermissibleMaximumWeigth = 3500,
             AutoType = AutoType.Truck,
