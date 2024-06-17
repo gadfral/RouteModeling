@@ -6,11 +6,19 @@ public static class RouteCalculator
 {
     public static Route CalculateRoute(Freight freight)
     {
-        var speed = RandomCalc.RandomSpeed();
+        var speed = RandomCalc.RandomSpeed(AutoType.PassengerCar);
         var way = RandomCalc.RandomWay();
-        var price = RandomCalc.RanmdonPrice();
+        var price = RandomCalc.RandomPrice(AutoType.PassengerCar);
 
-        throw new NotImplementedException();
+        var time = speed * way;
+        decimal fullPrice = price * (decimal)(way / 1000);
+
+        return new Route
+        {
+            FullPrice = fullPrice,
+            Time = time,
+            СurrencyCode = "RUB",
+        };
     }
 
 }

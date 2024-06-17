@@ -8,5 +8,13 @@ namespace RouteModelingCore.Entities
 {
     internal class Route
     {
+        public string СurrencyCode { get; set; }
+
+        public decimal FullPrice { get; set; }
+
+        /// <summary>
+        /// Время минутах
+        /// </summary>
+        public double Time { get; set; }
     }
 }
