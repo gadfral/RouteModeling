@@ -25,7 +25,7 @@ namespace RouteModelingCore.Helpers
                 return $"{hour:F} час(а/ов)";
             }
 
-            return $"{minute:F} минут(ы)",
+            return $"{minute:F} минут(ы)";
         }
     }
 }
