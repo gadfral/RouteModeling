@@ -13,51 +13,9 @@ namespace RouteModelingApp.Controllers
     public class RouteController : ControllerBase
     {
         [HttpGet]
-        public async Task<List<RouteModel>> Get()
+        public List<RouteModel> Get([FromQuery] GetRouteQuery request)
         {
-            return new List<RouteModel>()
-            {
-                new RouteModel()
-                {
-                    Name = "Путь 1",
-                }
-            };
-        }
-
-
-        // GET api/<RouteController>/5
-        [HttpGet("{id}")]
-        public List<RouteModel> Get(int id)
-        {
-            return RouteCalculator.CalculateRoutes(new Freight
-            {
-                Way = new Way
-                {
-                    From = new Location
-                    {
-                        Latitude = 1,
-                        Longitude = 2,
-                    },
-                    To = new Location
-                    {
-                        Longitude = 3,
-                        Latitude = 4,
-                    }
-                },
-                Dimensions = new Dimensions
-                {
-                    Length = 1,
-                    Height = 2,
-                    Width = 3,
-                },
-                AutoType = AutoType.Car,
-                Valuation = new Valuation
-                {
-                    AvailabilityOfInsurance = true,
-                    CostOfInsurance = 213123,
-                    CoveredAmount = 2132,
-                }
-            })
+            return RouteCalculator.CalculateRoutes(request.MapToFreight())
                 .Select(x => x.MapToModel())
                 .ToList();
         }

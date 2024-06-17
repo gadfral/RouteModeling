@@ -1,4 +1,5 @@
 ﻿using RouteModelingApp.Entities;
+using RouteModelingCore.Entities;
 
 namespace RouteModelingApp.Mapper
 {
@@ -9,6 +10,15 @@ namespace RouteModelingApp.Mapper
             FullPrice = route.FullPrice,
             Time = route.Time,
             СurrencyCode = route.СurrencyCode,
+        };
+
+        public static Freight MapToFreight(this GetRouteQuery query) => new Freight
+        {
+            Dimensions = query.Dimensions,
+            Way = query.Way,
+            AutoType = query.AutoType,
+            Weight = query.Weight,
+            Valuation = query.Valuation,
         };
     }
 }
