@@ -10,7 +10,6 @@ namespace RouteModelingApp.Mapper
         {
             FullPrice = $"{route.FullPrice:F} рублей",
             Time = TimeHelper.GetSimpleTime(route.Time),
-            СurrencyCode = route.СurrencyCode,
             Name = route.AutoName
         };
 
