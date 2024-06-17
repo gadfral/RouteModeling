@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace RouteModelingCore.Entities
 {
-    internal class Way
+    public sealed class Way
     {
+        public Location From { get; set; }
+
+        public Location To { get; set; }
     }
 }
