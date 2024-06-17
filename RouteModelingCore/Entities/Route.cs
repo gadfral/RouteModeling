@@ -12,9 +12,6 @@ namespace RouteModelingCore.Entities
 
         public decimal FullPrice { get; set; }
 
-        /// <summary>
-        /// Время минутах
-        /// </summary>
         public double Time { get; set; }
 
         public string AutoName { get; set; }

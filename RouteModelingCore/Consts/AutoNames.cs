@@ -12,6 +12,6 @@ namespace RouteModelingCore.Consts
 
         public static string Moto => nameof(Moto);
 
-        public static string Track => nameof(Track);
+        public static string Truck => nameof(Truck);
     }
 }
