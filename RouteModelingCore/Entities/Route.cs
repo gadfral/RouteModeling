@@ -16,5 +16,7 @@ namespace RouteModelingCore.Entities
         /// Время минутах
         /// </summary>
         public double Time { get; set; }
+
+        public string AutoName { get; set; }
     }
 }

@@ -38,6 +38,7 @@ public static class RouteCalculator
                 FullPrice = fullPrice,
                 Time = time / 60,
                 СurrencyCode = "RUB",
+                AutoName = autoContext.AutoType.GetName(),
             };
         });
     }

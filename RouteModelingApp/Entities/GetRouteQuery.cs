@@ -8,7 +8,7 @@ namespace RouteModelingApp.Entities
 
         public Dimensions Dimensions { get; set; }
 
-        public Valuation Valuation { get; set; }
+        //public Valuation Valuation { get; set; }
 
         public Way Way { get; set; }
 

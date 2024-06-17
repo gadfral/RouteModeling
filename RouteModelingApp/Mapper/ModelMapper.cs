@@ -10,6 +10,7 @@ namespace RouteModelingApp.Mapper
             FullPrice = route.FullPrice,
             Time = route.Time,
             СurrencyCode = route.СurrencyCode,
+            Name = route.AutoName
         };
 
         public static Freight MapToFreight(this GetRouteQuery query) => new Freight
@@ -18,7 +19,7 @@ namespace RouteModelingApp.Mapper
             Way = query.Way,
             AutoType = query.AutoType,
             Weight = query.Weight,
-            Valuation = query.Valuation,
+            //Valuation = query.Valuation,
         };
     }
 }
