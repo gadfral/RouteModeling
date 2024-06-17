@@ -1,5 +1,6 @@
 ﻿using RouteModelingApp.Entities;
 using RouteModelingCore.Entities;
+using RouteModelingCore.Helpers;
 
 namespace RouteModelingApp.Mapper
 {
@@ -8,7 +9,7 @@ namespace RouteModelingApp.Mapper
         public static RouteModel MapToModel(this RouteModelingCore.Entities.Route route) => new RouteModel
         {
             FullPrice = $"{route.FullPrice:F} рублей",
-            Time = $"{route.Time:F} минут(ы)",
+            Time = TimeHelper.GetSimpleTime(route.Time),
             СurrencyCode = route.СurrencyCode,
             Name = route.AutoName
         };
