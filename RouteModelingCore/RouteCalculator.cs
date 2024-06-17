@@ -31,7 +31,7 @@ public static class RouteCalculator
             var distance = DistanceHelper.CalculateDistance(freight.Way.From, freight.Way.To) / 1000;
 
             var time = distance / autoContext.Speed;
-            decimal fullPrice = autoContext.Price.FullPrice * (decimal)(distance / 10);
+            decimal fullPrice = autoContext.Price.FullPrice * (decimal)(distance / 100);
 
             return new Route
             {
