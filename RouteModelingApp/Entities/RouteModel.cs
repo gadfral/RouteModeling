@@ -4,12 +4,12 @@ public class RouteModel
 {
     public string СurrencyCode { get; set; }
 
-    public decimal FullPrice { get; set; }
+    public string FullPrice { get; set; }
 
     /// <summary>
     /// Время минутах
     /// </summary>
-    public double Time { get; set; }
+    public string Time { get; set; }
 
     public string Name { get; set; }
 
